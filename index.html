@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Examen de Grado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4A90E2">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1>Estudio de Derecho</h1>
+            <nav>
+                <button id="btn-study" class="active">Estudiar</button>
+                <button id="btn-stats">Estadísticas</button>
+                <button id="btn-settings">Ajustes</button>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <section id="study-section" class="active-section">
+                <div id="loading-questions">Cargando preguntas...</div>
+                <div id="question-area" style="display:none;">
+                    <p id="question-topic" class="topic"></p>
+                    <p id="question-text" class="question-text"></p>
+                    <div id="options-container">
+                        </div>
+                    <div id="feedback-area" style="display:none;">
+                        <p id="feedback-text"></p>
+                        <div id="justification-area" style="display:none;">
+                            <h4>Justificación:</h4>
+                            <p id="justification-text"></p>
+                        </div>
+                    </div>
+                    <button id="next-question-btn" style="display:none;">Siguiente Pregunta</button>
+                </div>
+                 <div id="no-more-questions" style="display:none;">
+                    <p>¡Felicidades! Has completado todas las preguntas disponibles.</p>
+                    <p>Puedes revisar tus estadísticas o reiniciar el progreso en Ajustes.</p>
+                </div>
+            </section>
+
+            <section id="stats-section" class="hidden-section">
+                <h2>Mis Estadísticas</h2>
+                <div id="stats-content">
+                    <p>Preguntas Totales: <span id="stats-total">0</span></p>
+                    <p>Preguntas Vistas: <span id="stats-viewed">0</span></p>
+                    <p>Aciertos: <span id="stats-correct">0</span> (<span id="stats-correct-percentage">0</span>%)</p>
+                    <p>Errores: <span id="stats-incorrect">0</span> (<span id="stats-incorrect-percentage">0</span>%)</p>
+                    <button id="reset-stats-btn">Reiniciar Estadísticas (y progreso)</button>
+                </div>
+            </section>
+
+            <section id="settings-section" class="hidden-section">
+                <h2>Ajustes</h2>
+                <p>Aquí podrás configurar opciones de la aplicación en el futuro.</p>
+                <button id="force-reload-data-btn">Forzar Recarga de Preguntas (Desde Fichero)</button>
+                <p class="settings-note">Nota: Esto borrará tu progreso actual y recargará las preguntas desde el archivo base. Úsalo si crees que hay un problema con los datos.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
