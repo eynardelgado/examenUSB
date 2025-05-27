@@ -1,4 +1,3 @@
-```javascript
 // app.js
 
 // --- 1. Simulación de Datos JSON (reemplazar con la carga de tu archivo JSON real) ---
